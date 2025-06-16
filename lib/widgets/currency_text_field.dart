@@ -1,7 +1,6 @@
+import 'package:budget/styles/app_colors.dart';
 import 'package:budget/utils/thousands_formatter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import '../main.dart'; // For ThousandsFormatter, consider moving it to a utils file for better modularity
 
 class CurrencyTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -22,8 +21,8 @@ class CurrencyTextField extends StatelessWidget {
     return Container(
       height: 46,
       decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(color: const Color(0xFFD0D5DD)),
+        color: AppColors.cardWhite,
+        border: Border.all(color: AppColors.border),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
@@ -33,11 +32,7 @@ class CurrencyTextField extends StatelessWidget {
             alignment: Alignment.center,
             child: const Text('\$', style: TextStyle(fontSize: 14)),
           ),
-          Container(
-            width: 1,
-            height: double.infinity,
-            color: const Color(0xFFD0D5DD),
-          ),
+          Container(width: 1, height: double.infinity, color: AppColors.border),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -45,11 +40,10 @@ class CurrencyTextField extends StatelessWidget {
                 controller: controller,
                 keyboardType: TextInputType.number,
                 inputFormatters: [ThousandsFormatter()],
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: InputBorder.none,
                   isCollapsed: true,
                   contentPadding: EdgeInsets.zero,
-                  hintText: hintText,
                 ),
                 style: const TextStyle(fontSize: 14),
                 enabled: true,

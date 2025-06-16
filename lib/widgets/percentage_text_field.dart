@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:budget/utils/percentage_input_formatter.dart';
+import 'package:budget/styles/app_colors.dart';
 
 class PercentageTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -28,11 +29,11 @@ class PercentageTextField extends StatelessWidget {
           decoration: InputDecoration(
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(color: Color(0xFFD0D5DD), width: 1),
+              borderSide: const BorderSide(color: AppColors.border, width: 1),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(color: Color(0xFFD0D5DD), width: 1),
+              borderSide: const BorderSide(color: AppColors.border, width: 1),
             ),
             contentPadding: const EdgeInsets.only(right: 20),
             hintText: hintText,
@@ -45,7 +46,7 @@ class PercentageTextField extends StatelessWidget {
           right: 8,
           child: Text(
             '%',
-            style: TextStyle(fontSize: 14, color: Color(0xFF18181C)),
+            style: TextStyle(fontSize: 14, color: AppColors.textDark),
           ),
         ),
       ],

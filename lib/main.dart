@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:budget/styles/app_text_styles.dart';
+import 'package:budget/styles/app_colors.dart';
 import 'package:budget/widgets/budget_card.dart';
 import 'package:budget/widgets/engagement_success_dialog.dart';
 import 'package:budget/widgets/percentage_text_field.dart';
@@ -134,7 +135,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
             Text("Budget", style: AppTextStyles.header),
             Text("Allocated Budget", style: AppTextStyles.subHeader),
             SizedBox(height: 12),
-            Divider(color: Color(0xFFE6E6E6)),
+            Divider(color: AppColors.cardBorder),
             SizedBox(height: 12),
             Row(
               children: [
@@ -142,24 +143,24 @@ class _BudgetScreenState extends State<BudgetScreen> {
                   title: "Allocate Estimated",
                   amount: "\$20,000",
                   icon: Icons.calculate,
-                  iconBgColor: const Color(0xFFB6ECD7),
-                  iconColor: Color(0xFF137E54),
+                  iconBgColor: AppColors.iconBgGreen,
+                  iconColor: AppColors.iconGreen,
                 ),
                 SizedBox(width: 10),
                 BudgetCard(
                   title: "Budget Allocated",
                   amount: "\$30,000",
                   icon: Icons.account_balance_wallet,
-                  iconBgColor: const Color(0xFFD9E5F7),
-                  iconColor: Color(0xFF417DDC),
+                  iconBgColor: AppColors.iconBgBlue,
+                  iconColor: AppColors.iconBlue,
                 ),
                 SizedBox(width: 10),
                 BudgetCard(
                   title: "Remaining Budget",
                   amount: "\$200,000",
                   icon: Icons.receipt_long,
-                  iconBgColor: Color(0xFFFEF1D8),
-                  iconColor: Color(0xFFFFA40A),
+                  iconBgColor: AppColors.iconBgYellow,
+                  iconColor: AppColors.iconYellow,
                 ),
               ],
             ),
@@ -168,9 +169,9 @@ class _BudgetScreenState extends State<BudgetScreen> {
               height: 50,
               padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
               decoration: BoxDecoration(
-                color: Color(0xFFF7F6F6),
+                color: AppColors.background,
                 borderRadius: BorderRadius.circular(4),
-                border: Border.all(color: Color(0xFFE6E6E6), width: 1),
+                border: Border.all(color: AppColors.cardBorder, width: 1),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -230,14 +231,14 @@ class _BudgetScreenState extends State<BudgetScreen> {
                   },
                   border: TableBorder(
                     horizontalInside: BorderSide(
-                      color: Color(0xFFEAECF0),
+                      color: AppColors.divider,
                       width: 1,
                     ),
                   ),
                   defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                   children: [
                     TableRow(
-                      decoration: BoxDecoration(color: Color(0xFFF6F6F6)),
+                      decoration: BoxDecoration(color: AppColors.background),
                       children: [
                         Padding(
                           padding: EdgeInsets.all(10),
@@ -279,9 +280,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                                   height: 42,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    border: Border.all(
-                                      color: Color(0xFFD0D5DD),
-                                    ),
+                                    border: Border.all(color: AppColors.border),
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                   padding: EdgeInsets.all(10),
@@ -317,7 +316,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                               height: 46,
                               decoration: BoxDecoration(
                                 color: Colors.white,
-                                border: Border.all(color: Color(0xFFD0D5DD)),
+                                border: Border.all(color: AppColors.border),
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: CurrencyTextField(
@@ -364,7 +363,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                                       ),
                                       child: Container(
                                         decoration: BoxDecoration(
-                                          color: Color(0xff1442A7),
+                                          color: AppColors.secondary,
                                           shape: BoxShape.circle,
                                         ),
                                         child: IconButton(
@@ -392,7 +391,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                                       ),
                                       child: Container(
                                         decoration: BoxDecoration(
-                                          color: Color(0xffF64E60),
+                                          color: AppColors.error,
                                           shape: BoxShape.circle,
                                         ),
                                         child: IconButton(
@@ -459,8 +458,8 @@ class _BudgetScreenState extends State<BudgetScreen> {
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
                     minimumSize: const Size(109, 40),
-                    backgroundColor: Color(0xF0F5FF),
-                    side: BorderSide(color: Color(0xF0F5FF)),
+                    backgroundColor: AppColors.background,
+                    side: BorderSide(color: AppColors.background),
                     padding: EdgeInsets.symmetric(horizontal: 24, vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
@@ -469,7 +468,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                   child: Text(
                     "Save",
                     style: TextStyle(
-                      color: Color(0xFF0052CC),
+                      color: AppColors.primary,
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
                     ),
@@ -485,7 +484,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(109, 40),
-                    backgroundColor: Color(0xFF0052CC),
+                    backgroundColor: AppColors.primary,
                     padding: EdgeInsets.symmetric(horizontal: 24, vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
@@ -494,7 +493,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                   child: Text(
                     "Next",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColors.cardWhite,
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
                     ),

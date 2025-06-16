@@ -12,8 +12,8 @@ class AppTextStyles {
 
   static const inter400_12 = TextStyle(
     fontFamily: 'Inter',
-    fontWeight: FontWeight.w400,
-    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    fontSize: 14,
     height: 22 / 12,
     letterSpacing: 0,
     color: Color(0xff18181C),
