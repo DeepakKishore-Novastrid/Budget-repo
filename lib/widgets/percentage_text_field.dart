@@ -7,6 +7,7 @@ class PercentageTextField extends StatelessWidget {
   final bool readOnly;
   final void Function(String)? onChanged;
   final String? hintText;
+  final Color? fillColor;
 
   const PercentageTextField({
     super.key,
@@ -14,6 +15,7 @@ class PercentageTextField extends StatelessWidget {
     required this.readOnly,
     this.onChanged,
     this.hintText,
+    this.fillColor = Colors.white,
   });
 
   @override
@@ -29,6 +31,7 @@ class PercentageTextField extends StatelessWidget {
       height: 48,
       padding: const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
+        color: fillColor,
         border: Border.all(color: AppColors.border, width: 1),
         borderRadius: BorderRadius.circular(8),
       ),
@@ -46,6 +49,8 @@ class PercentageTextField extends StatelessWidget {
               inputFormatters: [PercentageInputFormatter()],
 
               decoration: InputDecoration(
+                fillColor: fillColor,
+
                 hintText: hintText,
                 border: InputBorder.none,
                 isCollapsed: true,

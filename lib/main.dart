@@ -127,6 +127,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -349,6 +350,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                                 controller: janeControllers[index],
                                 onChanged: (_) => _updateField(index),
                                 readOnly: fields[index]['edit'] != true,
+                                fillColor: Color(0xffF0F0F0),
                               ),
                             ),
                           ),
@@ -457,7 +459,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                 OutlinedButton(
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
-                    minimumSize: const Size(109, 40),
+                    minimumSize: const Size(109, 50),
                     backgroundColor: AppColors.background,
                     side: BorderSide(color: AppColors.background),
                     padding: EdgeInsets.symmetric(horizontal: 24, vertical: 14),
@@ -483,7 +485,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(109, 40),
+                    minimumSize: const Size(109, 50),
                     backgroundColor: AppColors.primary,
                     padding: EdgeInsets.symmetric(horizontal: 24, vertical: 14),
                     shape: RoundedRectangleBorder(
