@@ -18,38 +18,37 @@ class PercentageTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.centerRight,
-      children: [
-        TextField(
-          controller: controller,
-          keyboardType: TextInputType.number,
-          textAlign: TextAlign.center,
-          inputFormatters: [PercentageInputFormatter()],
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(color: AppColors.border, width: 1),
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      decoration: BoxDecoration(
+        border: Border.all(color: AppColors.border, width: 1),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        textBaseline: TextBaseline.alphabetic,
+        children: [
+          SizedBox(
+            width: 20,
+            child: TextField(
+              controller: controller,
+              keyboardType: TextInputType.number,
+              textAlign: TextAlign.center,
+              inputFormatters: [PercentageInputFormatter()],
+              decoration: InputDecoration(
+                hintText: hintText,
+                border: InputBorder.none,
+              ),
+              readOnly: readOnly,
+              onChanged: onChanged,
             ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: const BorderSide(color: AppColors.border, width: 1),
-            ),
-            contentPadding: const EdgeInsets.only(right: 20),
-            hintText: hintText,
           ),
-          enabled: true,
-          readOnly: readOnly,
-          onChanged: onChanged,
-        ),
-        const Positioned(
-          right: 8,
-          child: Text(
+          const Text(
             '%',
             style: TextStyle(fontSize: 14, color: AppColors.textDark),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
