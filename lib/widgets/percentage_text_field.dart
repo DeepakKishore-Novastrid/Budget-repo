@@ -18,34 +18,52 @@ class PercentageTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const textStyle = TextStyle(
+      fontFamily: 'Inter',
+      fontWeight: FontWeight.w400,
+      fontSize: 14,
+      color: AppColors.textDark,
+    );
+
     return Container(
+      height: 48,
       padding: const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.border, width: 1),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
-        textBaseline: TextBaseline.alphabetic,
         children: [
           SizedBox(
-            width: 20,
+            width: 28,
             child: TextField(
               controller: controller,
               keyboardType: TextInputType.number,
-              textAlign: TextAlign.center,
+              textAlignVertical: TextAlignVertical.center,
+
               inputFormatters: [PercentageInputFormatter()],
+
               decoration: InputDecoration(
                 hintText: hintText,
                 border: InputBorder.none,
+                isCollapsed: true,
+                contentPadding: EdgeInsets.zero,
               ),
+              textAlign: TextAlign.end,
+              style: textStyle,
               readOnly: readOnly,
               onChanged: onChanged,
             ),
           ),
-          const Text(
-            '%',
-            style: TextStyle(fontSize: 14, color: AppColors.textDark),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+            child: const Text(
+              '%',
+              style: textStyle,
+              textAlign: TextAlign.start,
+            ),
           ),
         ],
       ),
